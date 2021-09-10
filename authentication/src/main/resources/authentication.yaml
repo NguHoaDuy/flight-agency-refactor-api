@@ -1,0 +1,18 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            provider: google
+            client-id: 310414411395-0fclc4mhqk2hseia9go7vuc4rnv5st46.apps.googleusercontent.com
+            client-secret: wH1hKdInt1QM_MUXfuoi0oeQ
+            #redirect-uri: http://localhost:4200/auth/verify
+          facebook:
+            provider: facebook
+            client-id: 563195955126084
+            client-secret: 710b9c581403abf999bb553d05620e8d
+          github:
+            provider: github
+            client-id: 749716d2d1ad6b6e7dac
+            client-secret: 6deed52556c24a17ad5d85179e85fb0552c0415f

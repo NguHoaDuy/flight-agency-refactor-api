@@ -1,0 +1,54 @@
+# import properties file
+#spring:
+
+# mysql config
+spring:
+  config:
+    import:
+      - file:../api/authentication/src/main/resources/authentication.yaml
+      - file:../api/email/src/main/resources/email.yaml
+  datasource:
+    url: jdbc:mysql://mysql-server.cd7v4ciag6fb.us-east-2.rds.amazonaws.com:3306/flight_agency_api?createDatabaseIfNotExist=true
+    username: root
+    password: 123123123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# spring security
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE
+
+#ssl config
+server:
+  ssl:
+    key-store: classpath:static/ssl_nhd_flight_agency/springboot.p12
+    key-store-password: password
+    key-store-type: pkcs12
+    key-alias: springboot
+    key-password: password
+  port: 8090
+
+
+  #spring oauth2
+  spring:
+    security:
+      oauth2:
+        client:
+          registration:
+            google-login:
+              provider: google
+              client-id: 237373171821-sm4sl12ri39pc7apk3sge1dr8m5u1oa7.apps.googleusercontent.com
+              client-secret: kLxJvLQexYC1PfjCwE-ntTE-
+              authorization-uri: https://accounts.google.com/o/oauth2/auth
+              token-uri: https://oauth2.googleapis.com/token
+              authorization-grant-type: authorization_code
+              scope: openid

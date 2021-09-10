@@ -1,0 +1,14 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: nhd.flight.agency@gmail.com
+    password: zkabpiiyklcgzctm
+    properties:
+      mail:
+        smtp:
+          auth: true
+          "starttls.enable": true
+#thymeleaf
+  thymeleaf:
+    cache: false
